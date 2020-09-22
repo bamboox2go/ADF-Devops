@@ -28,6 +28,9 @@ jobs:
         #   displayName: 'Azure PowerShell script: Stop ADF triggers'
 
         # https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-resource-group-deployment
+        - task: CmdLine@2
+          inputs:
+            script: 'dir /s $(Pipeline.Workspace)' 
         - task: AzureResourceGroupDeployment@2
           displayName: 'Azure Deployment:Create Or Update Resource Group action on $(rgName)'
           inputs:
