@@ -25,7 +25,7 @@ variables:
 stages:
 - stage: 'Deploy'
   displayName: 'Deploy project'
-  condition: and(succeeded('build'), ne(variables['build.sourceBranch'], 'refs/heads/master'))
+  condition: ne(variables['build.sourceBranch'], 'refs/heads/master')
   jobs:
   - template: pipeline/templates/jobs/deploy-adf-job.yml
     parameters:
