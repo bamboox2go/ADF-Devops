@@ -31,5 +31,12 @@ stages:
     parameters:
       environment: $(environment)
       subscriptionEndpoint: $(azure.subscription.endpoint)
+  - template: pipeline/templates/jobs/integration-tests-job.yml
+    parameters:
+      subscriptionEndpoint: $(azure.subscription.endpoint)
+      databaseServerName: $(sqlsrvrName)
+      databaseName: 'mi-datawarehouse-db-test'
+      keyvaultName: 'bamboox2g0-beta'
+  
 
  
