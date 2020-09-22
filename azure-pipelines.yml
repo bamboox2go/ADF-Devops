@@ -27,10 +27,10 @@ stages:
   displayName: 'Deploy project'
   condition: ne(variables['build.sourceBranch'], 'refs/heads/master')
   jobs:
-  - template: pipeline/templates/jobs/deploy-adf-job.yml
-    parameters:
-      environment: $(environment)
-      subscriptionEndpoint: $(azure.subscription.endpoint)
+  # - template: pipeline/templates/jobs/deploy-adf-job.yml
+  #   parameters:
+  #     environment: $(environment)
+  #     subscriptionEndpoint: $(azure.subscription.endpoint)
   - template: pipeline/templates/jobs/integration-tests-job.yml
     parameters:
       subscriptionEndpoint: $(azure.subscription.endpoint)
