@@ -5,7 +5,7 @@
 
 trigger:
 - adf_publish
-
+- test-pipeline
 pool:
   vmImage: 'Ubuntu-16.04'
 
