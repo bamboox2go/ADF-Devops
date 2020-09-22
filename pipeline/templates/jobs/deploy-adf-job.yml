@@ -16,8 +16,8 @@ jobs:
     runOnce:
       deploy:
         steps:
-        # - checkout: self
-        
+        - checkout: self
+          path: 'adf_publish'
 
         # https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-powershell
         # - task: AzurePowerShell@4
