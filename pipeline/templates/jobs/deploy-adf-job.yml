@@ -20,13 +20,13 @@ jobs:
           path: 'adf_publish'
 
         # https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-powershell
-        # - task: AzurePowerShell@4
-        #   inputs:
-        #     azureSubscription: ${{ parameters.subscriptionEndpoint }}
-        #     ScriptPath: '$(Pipeline.Workspace)/ciartifacts/adf_scripts/deploymentadf.ps1'
-        #     ScriptArguments: '-armTemplate "$(Pipeline.Workspace)\adf_publish\$(devAdfName)\ARMTemplateForFactory.json" -ResourceGroupName "$(rgName)" -DataFactoryName "$(adfName)" -predeployment $true'
-        #     azurePowerShellVersion: LatestVersion
-        #   displayName: 'Azure PowerShell script: Stop ADF triggers'
+        - task: AzurePowerShell@4
+          inputs:
+            azureSubscription: ${{ parameters.subscriptionEndpoint }}
+            ScriptPath: '$(Pipeline.Workspace)\adf_publish\$(devAdfName)\_scripts\deploymentadf.ps1'
+            ScriptArguments: '-armTemplate "$(Pipeline.Workspace)\adf_publish\$(devAdfName)\ARMTemplateForFactory.json" -ResourceGroupName "$(rgName)" -DataFactoryName "$(adfName)" -predeployment $true'
+            azurePowerShellVersion: LatestVersion
+          displayName: 'Azure PowerShell script: Stop ADF triggers'
 
         # https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-resource-group-deployment
         - task: CmdLine@2
@@ -44,13 +44,13 @@ jobs:
 
 
         # https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-powershell
-        # - task: AzurePowerShell@4
-        #   displayName: 'Azure PowerShell script: Start ADF triggers'
-        #   inputs:
-        #     azureSubscription: ${{ parameters.subscriptionEndpoint }}
-        #     ScriptPath: '$(Pipeline.Workspace)/ciartifacts/adf_scripts/deploymentadf.ps1'
-        #     ScriptArguments: '-armTemplate "$(Pipeline.Workspace)\adf_publish\$(devAdfName)\ARMTemplateForFactory.json" -ResourceGroupName "$(rgName)" -DataFactoryName "$(adfName)" -predeployment $false'
-        #     azurePowerShellVersion: LatestVersion
+        - task: AzurePowerShell@4
+          displayName: 'Azure PowerShell script: Start ADF triggers'
+          inputs:
+            azureSubscription: ${{ parameters.subscriptionEndpoint }}
+            ScriptPath: '$(Pipeline.Workspace)\adf_publish\$(devAdfName)\_scripts\deploymentadf.ps1'
+            ScriptArguments: '-armTemplate "$(Pipeline.Workspace)\adf_publish\$(devAdfName)\ARMTemplateForFactory.json" -ResourceGroupName "$(rgName)" -DataFactoryName "$(adfName)" -predeployment $false'
+            azurePowerShellVersion: LatestVersion
 
 
 
