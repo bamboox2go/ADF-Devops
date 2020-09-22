@@ -14,7 +14,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   sqlDwPath: 'synapse'
-  azure.subscription.endpoint: 'bamboox-beta'
+  azure.subscription.endpoint: 'bamboox-beta (2a24ae5f-0dab-46e6-8f9d-6a2018623814)'
   keyvault.name: 'mi-vault-test'
   azureLocation: 'UK South'
   rgName: 'bamboox-adf'
