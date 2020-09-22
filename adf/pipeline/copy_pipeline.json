@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy files",
+				"name": "CopyFilesUpdated",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
