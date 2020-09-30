@@ -1,10 +1,11 @@
 {
 	"name": "AzureBlobStorage1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"serviceEndpoint": "https://qzstorageaccountbb10.blob.core.windows.net",
+			"serviceEndpoint": "https://qzstorageaccountstg.blob.core.windows.net",
 			"accountKind": "Storage"
 		}
 	}

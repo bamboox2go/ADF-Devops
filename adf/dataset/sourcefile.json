@@ -13,5 +13,6 @@
 				"container": "srccontainer"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

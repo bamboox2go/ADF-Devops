@@ -13,5 +13,6 @@
 				"container": "sinkcontainer"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "CopyFilesUpdated",
+				"name": "Copy files",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -47,6 +47,8 @@
 				]
 			}
 		],
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2020-09-22T21:19:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }
