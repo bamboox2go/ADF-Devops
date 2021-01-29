@@ -23,7 +23,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy files",
+						"name": "Copy files newone",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
