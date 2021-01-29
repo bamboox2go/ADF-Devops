@@ -81,7 +81,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy files Name",
+						"name": "Copy files",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
