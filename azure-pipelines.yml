@@ -1,35 +1,35 @@
-# .NET Desktop
-# Build and run tests for .NET Desktop or Windows classic desktop solutions.
-# Add steps that publish symbols, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
+# # .NET Desktop
+# # Build and run tests for .NET Desktop or Windows classic desktop solutions.
+# # Add steps that publish symbols, save build artifacts, and more:
+# # https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
-trigger:
-- adf_publish
-- test-pipeline
-pool:
-  vmImage: 'Ubuntu-16.04'
+# trigger:
+# - adf_publish
+# - test-pipeline
+# pool:
+#   vmImage: 'Ubuntu-16.04'
 
-variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-  sqlDwPath: 'synapse'
-  azure.subscription.endpoint: 'bamboox-beta (2a24ae5f-0dab-46e6-8f9d-6a2018623814)'
-  keyvault.name: 'mi-vault-test'
-  azureLocation: 'UK South'
-  rgName: 'bamboox-adf'
-  devAdfName: 'bamboox-adf'
-  adfName: 'bamboox-adf-test'
-  persistentStorage: 'qzstorageaccountstg'
-  environment: test
-stages:
-- stage: 'Deploy'
-  displayName: 'Deploy project'
-  condition: ne(variables['build.sourceBranch'], 'refs/heads/master')
-  jobs:
-  - template: pipeline/templates/jobs/deploy-adf-job.yml
-    parameters:
-      environment: $(environment)
-      subscriptionEndpoint: $(azure.subscription.endpoint)
+# variables:
+#   solution: '**/*.sln'
+#   buildPlatform: 'Any CPU'
+#   buildConfiguration: 'Release'
+#   sqlDwPath: 'synapse'
+#   azure.subscription.endpoint: 'bamboox-beta (2a24ae5f-0dab-46e6-8f9d-6a2018623814)'
+#   keyvault.name: 'mi-vault-test'
+#   azureLocation: 'UK South'
+#   rgName: 'bamboox-adf'
+#   devAdfName: 'bamboox-adf'
+#   adfName: 'bamboox-adf-test'
+#   persistentStorage: 'qzstorageaccountstg'
+#   environment: test
+# stages:
+# - stage: 'Deploy'
+#   displayName: 'Deploy project'
+#   condition: ne(variables['build.sourceBranch'], 'refs/heads/master')
+#   jobs:
+#   - template: pipeline/templates/jobs/deploy-adf-job.yml
+#     parameters:
+#       environment: $(environment)
+#       subscriptionEndpoint: $(azure.subscription.endpoint)
 
  
